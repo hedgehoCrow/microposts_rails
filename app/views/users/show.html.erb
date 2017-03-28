@@ -24,6 +24,14 @@
 </div>
 
 <div class="row">
+    <aside class="col-md-offset-2 col-md-2">
+        <section class="user-info">
+            <h2>
+                <%= link_to "フォロー", followings_user_path(params[:id]) %>,
+                <%= link_to "フォロワー", followers_user_path(params[:id]) %>
+            </h2>
+        </section>
+    </aside>
     <div class="col-md-8">
         <%= render 'follow_form' if logged_in? %>
         <% if @user.microposts.any? %>
